@@ -1,2 +1,8 @@
 
-export default function About () {};
+export default function About () {
+    return (
+        <>
+            <h1>This is About Us </h1>
+        </>
+    )
+};
