@@ -1,11 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import './App.css'
-import Home from './pages/Home'
 import About from './pages/About'
-import VideoPlayer from './pages/VideoPlayer'
+import Home from './pages/Home'
 import VideoList from './pages/VideoList'
-import NavBar from './Components/NavBar'
-
+import VideoPlayer from './pages/VideoPlayer'
+import NavBar from './components/NavBar'
 
 
 function App() {
@@ -13,13 +12,12 @@ function App() {
   return (
     <>
       <Router>
-       <NavBar />
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/results/:resultTitle" element={<VideoList />}/>
           <Route path="/results/:resultTitle/:video" element={<VideoPlayer />}/>
           <Route path="/about" element={<About />}/>
-          
         </Routes>
       </Router>
     </>
