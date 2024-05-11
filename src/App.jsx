@@ -1,14 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import NavBar from './Components/NavBar'
-//import { useState } from 'react'
+import NavBar from './components/NavBar'
+import Home from './pages/Home'
+import About from './pages/About'
+import VideoPlayer from './pages/VideoPlayer'
+import VideoList from './pages/VideoList'
+
 
 function App() {
 
   return (
     <>
-    <NavBar />
-
-    {/* <h1 className='bg-red-400 py-4 rounded-xl'>Hello World</h1> */}
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/results/:resultTitle" element={<VideoList />}/>
+          <Route path="/results/:resultTitle/:video" element={<VideoPlayer />}/>
+          <Route path="/about" element={<About />}/>
+        </Routes>
+      </Router>
     </>
   )
 }
