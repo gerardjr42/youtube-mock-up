@@ -8,4 +8,4 @@ export default function VideoPlayer () {
             <h1> This is VideoPlayer </h1>
         </>
     )
-};
+}
