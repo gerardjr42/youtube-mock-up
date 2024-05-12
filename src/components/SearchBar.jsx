@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+
 import { getSearch, getStatistics } from "../fetch/fetch";
 
 export default function SearchBar ({setSearchedVideos}) {
@@ -45,4 +46,4 @@ export default function SearchBar ({setSearchedVideos}) {
             </div>
         </>
     )
-};
+}

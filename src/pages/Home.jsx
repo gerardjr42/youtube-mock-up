@@ -1,8 +1,12 @@
 import { useEffect} from "react";
 import Video from "../components/Video";
 import { latestShow } from "../fetch/fetch";
+import { useLocation } from "react-router-dom";
+
 
 export default function Home({videos, setVideos, searchedVideos}) {
+const location = useLocation();
+
 
   useEffect(() => {
     latestShow()
@@ -12,7 +16,8 @@ export default function Home({videos, setVideos, searchedVideos}) {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+
+  }, [location]);
 
   return (
     <div className="grid grid-cols-4 w-[95%] mx-auto mt-12 gap-2">
