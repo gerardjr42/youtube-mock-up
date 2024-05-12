@@ -1,8 +1,10 @@
 import { useEffect} from "react";
 import Video from "../components/Video";
 import { latestShow } from "../fetch/fetch";
+import { useLocation } from "react-router-dom";
 
 export default function Home({videos, setVideos}) {
+const location = useLocation();
 
   useEffect(() => {
     latestShow()
@@ -12,7 +14,7 @@ export default function Home({videos, setVideos}) {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [location]);
   console.log(videos)
 
   return (

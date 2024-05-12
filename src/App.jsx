@@ -6,6 +6,9 @@ import Home from './pages/Home'
 import VideoList from './pages/VideoList'
 import VideoPlayer from './pages/VideoPlayer'
 import NavBar from './components/NavBar'
+// import Watch from './pages/Watch'
+// import Video from './components/Video'
+import Watch from './pages/Watch'
 
 
 function App() {
@@ -16,7 +19,8 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home videos={videos} setVideos={setVideos}/>}/>
+          <Route path="/" element={<Home videos={videos} setVideos={setVideos} />}/>
+          <Route path="/watch/:title/:id" element={<Watch/>} />
           <Route path="/results/:resultTitle" element={<VideoList />}/>
           <Route path="/results/:resultTitle/:video" element={<VideoPlayer />}/>
           <Route path="/about" element={<About />}/>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getSearch } from "../fetch/fetch";
+// import { getSearch } from "../fetch/fetch";
 
 export default function SearchBar () {
 
@@ -23,4 +23,4 @@ export default function SearchBar () {
             </div>
         </>
     )
-};
+}
