@@ -5,4 +5,4 @@ export default function VideoList () {
             <h1> This Is VideoList</h1>
         </>
     )
-};
+}
