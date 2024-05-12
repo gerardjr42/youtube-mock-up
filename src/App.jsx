@@ -1,14 +1,12 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { useState } from 'react'
-import './App.css'
-import About from './pages/About'
+import NavBar from './components/NavBar'
 import Home from './pages/Home'
+import Watch from './pages/Watch'
 import VideoList from './pages/VideoList'
 import VideoPlayer from './pages/VideoPlayer'
-import NavBar from './components/NavBar'
-// import Watch from './pages/Watch'
-// import Video from './components/Video'
-import Watch from './pages/Watch'
+import About from './pages/About'
+import './App.css'
 
 
 function App() {

@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import { getChannel } from "../fetch/fetch";
 
 export default function Video({ video}) {
-  // const {id, title} = useParams();
-  // console.log(id);
-  // console.log(title);
-
   const [channel, setChannel] = useState({});
 
   //useEffect to mount the channel logo to each Video
@@ -36,10 +32,13 @@ export default function Video({ video}) {
     }
     return `${arr} •`;
   }
-  // console.log(video.id)
   return (
-    <Link to={`/watch/${video.snippet.channelTitle.replaceAll(" ", "")}/${video.id}`}>
-      <div className="">
+    <Link 
+      to={`/watch/${video.snippet.channelTitle.replaceAll(" ", "")}/${video.id}`} 
+      state={{
+        videoData: video,
+        channelData: channel
+        }}>
         <img
           src={video.snippet.thumbnails.maxres.url}
           alt="thumbnail"
@@ -62,7 +61,6 @@ export default function Video({ video}) {
           {video.snippet.channelTitle}
         </h3>
         <h3 className="mb-12 ml-12 text-start text-sm text-[#AAA]">{`${convert(arr)} ${video.snippet.publishedAt}`}</h3>
-      </div>
     </Link>
   );
 }
