@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import './App.css'
 import About from './pages/About'
 import Home from './pages/Home'
@@ -8,13 +9,14 @@ import NavBar from './components/NavBar'
 
 
 function App() {
+  const [videos, setVideos] = useState([]);
 
   return (
     <>
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Home videos={videos} setVideos={setVideos}/>}/>
           <Route path="/results/:resultTitle" element={<VideoList />}/>
           <Route path="/results/:resultTitle/:video" element={<VideoPlayer />}/>
           <Route path="/about" element={<About />}/>
