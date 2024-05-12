@@ -18,24 +18,24 @@ export default function Video({ video }) {
   //Video views is displayed as a regular numerical number, convert it to how youtube has it:
   //Function should loop through the string, and if length > 4 & <=6 than add a "k" -> Ex: 312,231 = 300k
   //If length > 7 than add a "M" -> Ex: 2123123 = 2M
-  let views = video.statistics.viewCount;
-  let arr = views.split("");
+  // let views = video.statistics.viewCount;
+  // let arr = views.split("");
   
-  function convert(num) {
-    if(num.length >= 4 && num.length <= 6) {
-      arr = num.slice(0,3).join("") + "K"
-    } else if (num.length > 6) {
-      arr = num.slice(0,3).join("") + "M"
-    } else if (num < 3) {
-      return num
-    }
-    return `${arr} •`;
-  }
+  // function convert(num) {
+  //   if(num.length >= 4 && num.length <= 6) {
+  //     arr = num.slice(0,3).join("") + "K"
+  //   } else if (num.length > 6) {
+  //     arr = num.slice(0,3).join("") + "M"
+  //   } else if (num < 3) {
+  //     return num
+  //   }
+  //   return `${arr} •`;
+  // }
 
   return (
     <div className="">
       <img
-        src={video.snippet.thumbnails.maxres.url}
+        src={video.snippet.thumbnails.high.url}
         alt="thumbnail"
         className="h-[215px] w-[380px] cursor-pointer rounded-xl shadow hover:rounded-none hover:delay-200 mb-3"
       />
@@ -55,7 +55,7 @@ export default function Video({ video }) {
       <h3 className="text-start text-[#AAA] ml-12 text-sm">
         {video.snippet.channelTitle}
       </h3>
-      <h3 className="text-start text-[#AAA] ml-12 mb-12 text-sm">{`${convert(arr)} ${video.snippet.publishedAt}`}</h3>
+      {/* <h3 className="text-start text-[#AAA] ml-12 mb-12 text-sm">{`${convert(arr)} ${video.snippet.publishedAt}`}</h3> */}
     </div>
   );
 }

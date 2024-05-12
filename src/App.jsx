@@ -10,13 +10,14 @@ import NavBar from './components/NavBar'
 
 function App() {
   const [videos, setVideos] = useState([]);
+  const [searchedVideos, setSearchedVideos] = useState([])
 
   return (
     <>
       <Router>
-        <NavBar />
+        <NavBar setSearchedVideos={setSearchedVideos}/>
         <Routes>
-          <Route path="/" element={<Home videos={videos} setVideos={setVideos}/>}/>
+          <Route path="/" element={<Home setSearchedVideos={setSearchedVideos} searchedVideos={searchedVideos} videos={videos} setVideos={setVideos}/>}/>
           <Route path="/results/:resultTitle" element={<VideoList />}/>
           <Route path="/results/:resultTitle/:video" element={<VideoPlayer />}/>
           <Route path="/about" element={<About />}/>
