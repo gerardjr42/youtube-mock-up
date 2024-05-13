@@ -23,15 +23,23 @@ export default function Video({ video}) {
   let arr = views.split("");
 
   function convert(num) {
-    if (num.length >= 4 && num.length <= 6) {
-      arr = num.slice(0, 3).join("") + "K";
-    } else if (num.length > 6) {
-      arr = num.slice(0, 3).join("") + "M";
-    } else if (num < 3) {
-      return num;
+    let arr = []
+      if (num.length === 4) {
+        arr = num.slice(0, 1).join("") + "K";
+      } else if (num.length === 5 ) {
+        arr = num.slice(0,2).join("") + "K"
+      } else if (num.length === 6) {
+        arr = num.slice(0, 3).join("") + "K";
+      } else if (num.length === 7) {
+        arr = num.slice(0,1).join("") + "M"
+      } else if (num.length ===8) {
+        arr = num.slice(0,2).join("") + "M"
+      } else if (num.length === 9) {
+        arr = num.slice(0,3).join("") + "M"
+      }
+      return `${arr}`;
     }
-    return `${arr} •`;
-  }
+    
   return (
     <Link 
       to={`/watch/${video.snippet.channelTitle.replaceAll(" ", "")}/${video.id}`} 
