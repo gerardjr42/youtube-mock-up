@@ -13,8 +13,8 @@ export default function SearchBar () {
 
     return (
         <>
-            <div>
-                <input 
+            <div className="content-center">
+                <input className=" w-96 rounded justify-center pl-2"
                 placeholder="Search Video"
                 type="text"
                 value={searchVideo}
