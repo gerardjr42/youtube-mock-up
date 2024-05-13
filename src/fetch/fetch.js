@@ -16,7 +16,7 @@ export function latestShow() {
 //https://www.googleapis.com/youtube/v3/channels?key=${URL}&part=snippet&id=UCOhtMAg7xh8wv_wUHMgFc-Q
 
 export function getChannel(channelId) {
-  return fetch(`https://www.googleapis.com/youtube/v3/channels?key=${URL}&part=snippet&id=${channelId}`)
+  return fetch(`https://www.googleapis.com/youtube/v3/channels?key=${URL}&part=snippet,statistics&id=${channelId}`)
   .then((response) => {
     if (!response.ok) {
       throw new Error("Fetching channel information was not successful")
