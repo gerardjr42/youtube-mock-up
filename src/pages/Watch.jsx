@@ -72,26 +72,26 @@ export default function Watch() {
         </button>
           <div className="ml-auto mr-auto flex align-middle items-center">
           <button className="bg-[#272727] text-white rounded-l-full border-r border-gray-500 px-4 py-2 text-sm font-semibold flex align-middle items-center">
-            <img src="/public/assets/images/Like_logo.png" alt="like logo" className="mr-2 w-5 h-5"/>
+            <img src="/assets/images/Like_logo.png" alt="like logo" className="mr-2 w-5 h-5"/>
             {`${convert(likes)}`}
           </button>
           <button className="bg-[#272727] text-white rounded-r-full  px-4 py-2 text-sm font-semibold mr-2 flex align-middle items-center">
-            <img src="/public/assets/images/dislike-logo.png" alt="dislike logo" className=" w-5 h-5"/>
+            <img src="/assets/images/dislike-logo.png" alt="dislike logo" className=" w-5 h-5"/>
           </button>
           <button className="bg-[#272727] text-white rounded-full  px-4 py-2 text-sm font-semibold mr-2 flex align-middle items-center">
-            <img src="/public/assets/images/share-logo.png" alt="share logo" className="w-5 h-5 mr-2"/>
+            <img src="/assets/images/share-logo.png" alt="share logo" className="w-5 h-5 mr-2"/>
             Share
           </button>
           <button className="bg-[#272727] text-white rounded-full  px-4 py-2 text-sm font-semibold mr-2 flex align-middle items-center">
-            <img src="/public/assets/images/scissors-logo.png" alt="clip logo" className="w-5 h-5 mr-2"/>
+            <img src="/assets/images/scissors-logo.png" alt="clip logo" className="w-5 h-5 mr-2"/>
             Clip
           </button>
           <button className="bg-[#272727] text-white rounded-full  px-4 py-2 text-sm font-semibold mr-2 flex align-middle items-center">
-            <img src="/public/assets/images/add-list-logo.png" alt="save logo" className="w-5 h-5 mr-2"/>
+            <img src="/assets/images/add-list-logo.png" alt="save logo" className="w-5 h-5 mr-2"/>
             Save
           </button>
           <button className="bg-[#272727] text-white rounded-full  px-2 py-2 text-sm font-semibold flex align-middle items-center">
-            <img src="/public/assets/images/dots-logo.png" alt="more logo" className="w-5 h-5"/>
+            <img src="/assets/images/dots-logo.png" alt="more logo" className="w-5 h-5"/>
           </button>
           </div>
         </div>
