@@ -35,12 +35,12 @@ export function getSearch (search) {
     })
 }
 
-export function getStatistics (id) {
-    return fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${id}&key=${URL}`)
-    .then(res => {
-        if (!res.ok) {
-            throw new Error("Fetching channel information was not successful");
-        }
-        return res.json()
-    })
+export function getSearchStatistics(videoId) {
+  return fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${URL}`)
+  .then((response) => {
+    if(!response.ok) {
+      throw new Error("Fetching Stats information was not successful")
+    }
+    return response.json();
+  })
 }
