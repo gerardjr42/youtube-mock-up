@@ -24,3 +24,23 @@ export function getChannel(channelId) {
     return response.json();
   })
 }
+
+export function getSearch (search) {
+    return fetch(`https://www.googleapis.com/youtube/v3/search?key=${URL}&q=${search}&type=video&part=snippet&maxResults=8&chart=mostPopular`)
+    .then(res => {
+        if (!res.ok) {
+            throw new Error("Fetching channel information was not successful");
+        }
+       return res.json()
+    })
+}
+
+export function getStatistics (id) {
+    return fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${id}&key=${URL}`)
+    .then(res => {
+        if (!res.ok) {
+            throw new Error("Fetching channel information was not successful");
+        }
+        return res.json()
+    })
+}
