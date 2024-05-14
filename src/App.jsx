@@ -7,7 +7,6 @@ import VideoList from './pages/VideoList'
 import About from './pages/About'
 import './App.css'
 
-
 function App() {
   const [videos, setVideos] = useState([]);
   const [searchedVideos, setSearchedVideos] = useState([])
