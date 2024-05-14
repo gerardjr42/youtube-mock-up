@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom";
-import Video from "../components/Video";
+import SearchedVideos from "../components/SearchedVideos"
+
 
 export default function VideoList ({searchedVideos}) {
 
@@ -7,7 +7,7 @@ export default function VideoList ({searchedVideos}) {
         <>
             <div className="grid grid-cols-4 w-[95%] mx-auto mt-12 gap-2">
             {searchedVideos.map(video => {
-                return <Video video={video}  key={video.id.videoId}/>
+                return <SearchedVideos video={video}  key={video.id.videoId}/>
                 })}
             </div>
         </>

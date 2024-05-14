@@ -34,7 +34,7 @@ export default function SearchBar ({setSearchedVideos}) {
             <div>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="search-bar">
-                        <input className="text-black"
+                        <input className="text-black rounded-l-lg w-96 mt-1.5 pl-2"
                         required
                         placeholder="Search Video"
                         type="text"
@@ -43,7 +43,7 @@ export default function SearchBar ({setSearchedVideos}) {
                         id="search-bar"
                         name="search-bar"
                         />
-                    </label><span onClick={resetSearch} className="bg-white text-black p-1 cursor-pointer">X</span>
+                    </label><span onClick={resetSearch} className="bg-white mr-1  text-black p-1 cursor-pointer">X</span>
                     <button type="submit"> Search </button>
                 </form>
             </div>
