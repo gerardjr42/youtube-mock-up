@@ -63,7 +63,7 @@ export default function Watch() {
           onClick={() => setIsSubscribed(!isSubscribed)}>
           {isSubscribed ? (
           <>
-            <img src="/public/assets/images/notification-logo.png" className="w-5 h-5 mr-2" alt="notification logo"/>
+            <img src="/assets/images/notification-logo.png" className="w-5 h-5 mr-2" alt="notification logo"/>
             {"Subscribed"}
           </>
           ) : (

@@ -8,7 +8,6 @@ import VideoPlayer from './pages/VideoPlayer'
 import About from './pages/About'
 import './App.css'
 
-
 function App() {
   const [videos, setVideos] = useState([]);
 
