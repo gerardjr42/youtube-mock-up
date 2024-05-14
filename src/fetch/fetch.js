@@ -36,7 +36,7 @@ export function getSearch (search) {
 }
 
 export function getStatistics (id) {
-    return fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${id}&key=${URL}`)
+    return fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${id}&key=${URL}`)
     .then(res => {
         if (!res.ok) {
             throw new Error("Fetching channel information was not successful");
@@ -44,3 +44,4 @@ export function getStatistics (id) {
         return res.json()
     })
 }
+
