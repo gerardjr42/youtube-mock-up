@@ -65,7 +65,7 @@ export default function SearchedVideos({ video }) {
       {videoStats && videoStats.snippet && (
         <div>
           <Link
-            to={`/results/${video.snippet.title.replaceAll(" ", "")}/${video.id.videoId}`}
+            to={`/results/${video.snippet.channelTitle.replaceAll(" ", "")}/${video.id.videoId}`}
             state={{
               videoData: video,
               channelData: channel,

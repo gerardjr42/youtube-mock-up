@@ -52,13 +52,13 @@ export default function SearchBar({ setSearchedVideos }) {
               />
           <button className="py-1">
             <img
-              src="/public/assets/images/search-logo.png"
+              src="/assets/images/search-logo.png"
               alt="search icon"
               className="rounded-r-full border border-gray-600 bg-[#222] px-4 py-2"
               />
           </button>
           <button className=" ml-5 rounded-full bg-[#222] p-[8px] hover:bg-[#3C3D3D]">
-            <img src="/public/assets/images/mic-logo.png" alt="mic logo" />
+            <img src="/assets/images/Mic-Logo.png" alt="mic logo" />
           </button>
           {/* <span onClick={resetSearch} className="bg-white mr-1  text-black p-1 cursor-pointer">X</span>
                     <button type="submit"> Search </button> */}
