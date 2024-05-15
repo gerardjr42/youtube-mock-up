@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { getSearch, getStatistics } from "../fetch/fetch";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBar ({setSearchedVideos}) {
 
     const [searchVideo, setSearchVideo] = useState("");
+    
     const navigate = useNavigate();
 
     function resetSearch () {
@@ -25,6 +26,7 @@ export default function SearchBar ({setSearchedVideos}) {
                 .then(res => res.items.map(x => response.items.map(o => o.statistics = x.statistics)))
             })
             setSearchedVideos(response.items);
+
         }).then(() => navigate(`/results/${searchVideo}`))
     }
 

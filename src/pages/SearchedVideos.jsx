@@ -18,7 +18,7 @@ export default function SearchedVideos ({ video }) {
 
     return (
          <Link 
-            to={`/watch/${video.snippet.channelTitle.replaceAll(" ", "")}/${video.id}`} 
+            to={`/watch/${video.snippet.title.replaceAll(" ", "")}/${video.id.videoId}`} 
             state={{
                 videoData: video,
                 channelData: channel
@@ -31,7 +31,7 @@ export default function SearchedVideos ({ video }) {
                 <div className="flex items-start align-top">
                 {channel.snippet && (
                     <img
-                    src={channel.snippet.thumbnails.high.url} // Access channel logo URL
+                    src={channel.snippet.thumbnails.high.url} 
                     alt="logo"
                     className="mr-3 h-9 w-9 rounded-full"
                     key={channel.id}
