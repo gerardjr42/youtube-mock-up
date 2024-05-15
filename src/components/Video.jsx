@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getChannel } from "../fetch/fetch";
+import { formatDistanceToNow } from "date-fns";
 
 export default function Video({ video}) {
   const [channel, setChannel] = useState({});
+
+  const formattedDate = video.snippet.publishedAt
+  const relativeTime = formatDistanceToNow(new Date(formattedDate), { addSuffix: true });
+      
 
   //useEffect to mount the channel logo to each Video
   useEffect(() => {
@@ -16,9 +21,6 @@ export default function Video({ video}) {
       });
   }, [video.snippet.channelId]);
 
-  //Video views is displayed as a regular numerical number, convert it to how youtube has it:
-  //Function should loop through the string, and if length > 4 & <=6 than add a "k" -> Ex: 312,231 = 300k
-  //If length > 7 than add a "M" -> Ex: 2123123 = 2M
   let views = video.statistics.viewCount;
   let arr = views.split("");
 
@@ -39,23 +41,34 @@ export default function Video({ video}) {
       }
       return `${arr}`;
     }
-    
+
   return (
     <Link 
-      to={`/watch/${video.snippet.channelTitle.replaceAll(" ", "")}/${video.id}`} 
+      to={`/watch/${video.snippet.title.replaceAll(" ", "")}/${video.id}`} 
       state={{
         videoData: video,
-        channelData: channel
+        channelData: channel,
+        relativeTime: relativeTime
         }}>
-        <img
-          src={video.snippet.thumbnails.maxres.url}
-          alt="thumbnail"
-          className="mb-3 h-[215px] w-[380px] cursor-pointer rounded-xl shadow hover:rounded-none hover:delay-200"
-        />
+        {video.snippet.thumbnails.maxres ? (
+              <img
+                src={video.snippet.thumbnails.maxres.url}
+                alt="thumbnail"
+                className="mb-3 h-[215px] w-[380px] cursor-pointer rounded-xl shadow hover:rounded-none hover:delay-200"
+                key={video.id}
+              />
+            ): (
+              <img
+                src={video.snippet.thumbnails.high.url}
+                alt="thumbnail"
+                className="mb-3 h-[215px] w-[380px] cursor-pointer rounded-xl shadow hover:rounded-none hover:delay-200"
+                key={video.id}
+              />
+            )}
         <div className="flex items-start align-top">
-          {channel.snippet && (
+          {channel && channel.snippet && (
             <img
-              src={channel.snippet.thumbnails.high.url} // Access channel logo URL
+              src={channel.snippet.thumbnails.high.url}
               alt="logo"
               className="mr-3 h-9 w-9 rounded-full"
               key={channel.id}
@@ -68,7 +81,7 @@ export default function Video({ video}) {
         <h3 className="ml-12 text-start text-sm text-[#AAA]">
           {video.snippet.channelTitle}
         </h3>
-        <h3 className="mb-12 ml-12 text-start text-sm text-[#AAA]">{`${convert(arr)} ${video.snippet.publishedAt}`}</h3>
+        <h3 className="mb-12 ml-12 text-start text-sm text-[#AAA]">{`${convert(arr)} ${relativeTime}`}</h3>
     </Link>
   );
 }
