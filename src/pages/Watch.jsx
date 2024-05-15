@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useState } from "react";
 import YouTube from "react-youtube";
+import CommentForm from "../components/CommentForm";
 
 export default function Watch() {
   const location = useLocation();
@@ -99,6 +100,7 @@ export default function Watch() {
         <h3 className="text-white font-semibold">{`${convert(views)} views ${videoData.snippet.publishedAt}`}</h3>
         <h3 className="text-white text-sm truncate">{videoData.snippet.description}</h3>
         </div>
+        <CommentForm />
       </>
     );
   }
