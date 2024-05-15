@@ -5,21 +5,23 @@ import Home from './pages/Home'
 import Watch from './pages/Watch'
 import VideoList from './pages/VideoList'
 import About from './pages/About'
+import WatchSearchedVideo from "./pages/WatchSearchedVideo"
 import './App.css'
 
 function App() {
   const [videos, setVideos] = useState([]);
   const [searchedVideos, setSearchedVideos] = useState([])
+  
 
   return (
     <>
       <Router>
-        <NavBar setSearchedVideos={setSearchedVideos} />
+        <NavBar setSearchedVideos={setSearchedVideos}/>
         <Routes>
           <Route path="/" element={<Home videos={videos} setVideos={setVideos} />}/>
           <Route path="/watch/:title/:id" element={<Watch/>} />
-          <Route path="/results/:resultTitle" element={<VideoList searchedVideos={searchedVideos}/>}/>
-          {/* <Route path="/results/:resultTitle/:video" element={<VideoPlayer />}/> */}
+          <Route path="/results/:resultTitle" element={<VideoList  searchedVideos={searchedVideos} />}/>
+          <Route path="/results/:resultTitle/:video" element={<WatchSearchedVideo />}/>
           <Route path="/about" element={<About />}/>
         </Routes>
       </Router>
