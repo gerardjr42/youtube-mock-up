@@ -44,7 +44,7 @@ export default function Video({ video}) {
 
   return (
     <Link 
-      to={`/watch/${video.snippet.title.replaceAll(" ", "")}/${video.id}`} 
+      to={`/watch/${video.snippet.channelTitle.replaceAll(" ", "")}/${video.id}`} 
       state={{
         videoData: video,
         channelData: channel,
