@@ -31,7 +31,7 @@ export function getSearch (search) {
         if (!res.ok) {
             throw new Error("Fetching channel information was not successful");
         }
-       return res.json()
+      return res.json()
     })
 }
 

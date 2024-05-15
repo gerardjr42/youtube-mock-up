@@ -12,7 +12,6 @@ function App() {
   const [videos, setVideos] = useState([]);
   const [searchedVideos, setSearchedVideos] = useState([])
   
-
   return (
     <>
       <Router>
@@ -21,7 +20,7 @@ function App() {
           <Route path="/" element={<Home videos={videos} setVideos={setVideos} />}/>
           <Route path="/watch/:title/:id" element={<Watch/>} />
           <Route path="/results/:resultTitle" element={<VideoList  searchedVideos={searchedVideos} />}/>
-          <Route path="/results/:resultTitle/:video" element={<WatchSearchedVideo />}/>
+          <Route path="/results/:resultTitle/:videoId" element={<WatchSearchedVideo />}/>
           <Route path="/about" element={<About />}/>
         </Routes>
       </Router>
