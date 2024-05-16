@@ -13,7 +13,6 @@ export default function WatchSearchedVideo() {
   const [liked, setLiked] = useState(false);
 
   let views = videoData.statistics.viewCount.split("");
-  console.log(views)
   let subs = channelData.statistics.subscriberCount.split("");
   let likes = videoData.statistics.likeCount.split("");
   let comments = stats.statistics.commentCount;
