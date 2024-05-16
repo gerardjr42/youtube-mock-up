@@ -33,7 +33,7 @@ export default function CommentForm() {
     <>
       <div className="flex flex-row">
         <img
-          src="#"
+          src="/public/assets/images/profile-user.png"
           alt=""
           className="ml-6 mt-4 h-9 w-9 rounded-full bg-[#787878]"
         />
