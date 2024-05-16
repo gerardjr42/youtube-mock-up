@@ -1,6 +1,7 @@
 import YouTube from "react-youtube";
 import { useLocation, useParams } from "react-router-dom";
 import { useState } from "react";
+import CommentForm from "../components/CommentForm";
 
 export default function Watch() {
   const location = useLocation();
@@ -125,6 +126,7 @@ export default function Watch() {
       <img src="/assets/images/sortby-logo.png" alt="sortby logo" className="w-6 h-6" />
       <h1 className="text-white text-base font-semibold">Sort by</h1>
       </div>
+      <CommentForm />
       </>
     );
   }
