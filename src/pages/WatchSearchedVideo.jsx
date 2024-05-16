@@ -1,6 +1,7 @@
 import YouTube from "react-youtube";
 import { useLocation, useParams } from "react-router-dom";
 import { useState } from "react";
+import CommentForm from "../components/CommentForm";
 
 export default function WatchSearchedVideo() {
   const location = useLocation();
@@ -174,6 +175,7 @@ export default function WatchSearchedVideo() {
         />
         <h1 className="text-base font-semibold text-white">Sort by</h1>
       </div>
+      <CommentForm />
     </>
   );
 }

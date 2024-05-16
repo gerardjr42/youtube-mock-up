@@ -7,10 +7,10 @@ export default function NavBar ({setSearchedVideos}) {
             <Link to="/">
                 <img src="/assets/images/Youtube-Logo-White.png" className="w-22 h-7 items-center ml-6"/>
             </Link>
-            <Link to="/about">
-                <p className="ml-12 hover:text-pink-300">AboutUs</p>
-            </Link>
             <SearchBar setSearchedVideos={setSearchedVideos} />
+            <Link to="/about">
+                <p className="mr-16 hover:text-pink-300">AboutUs</p>
+            </Link>
         </div>
     );
 }
