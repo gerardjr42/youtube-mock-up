@@ -34,7 +34,7 @@ export default function SearchBar({ setSearchedVideos }) {
 
   return (
     <>
-      <div className="flex w-full items-center justify-start bg-[#0F0F0F] py-3 text-white ml-40">
+      <div className="flex w-full items-center justify-start bg-[#0F0F0F] py-3 text-white ml-36">
         <form onSubmit={handleSubmit}>
           <label
             htmlFor="search-bar"
