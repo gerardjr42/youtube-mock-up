@@ -30,7 +30,6 @@ export default function SearchedVideos({ video }) {
 
   let views;
   if (videoStats && videoStats.statistics && videoStats.statistics.viewCount) {
-    console.log(videoStats.statistics);
     views = videoStats.statistics.viewCount.split("");
   }
 
