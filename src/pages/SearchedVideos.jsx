@@ -29,7 +29,8 @@ export default function SearchedVideos({ video }) {
   }, [video.snippet.channelId]);
 
   let views;
-  if (videoStats && videoStats.statistics) {
+  if (videoStats && videoStats.statistics && videoStats.statistics.viewCount) {
+    console.log(videoStats.statistics);
     views = videoStats.statistics.viewCount.split("");
   }
 
@@ -44,20 +45,22 @@ export default function SearchedVideos({ video }) {
 
   function convert(num) {
     let arr = "";
-    if (num.length === 4) {
-      arr = num.slice(0, 1).join("") + "K";
-    } else if (num.length === 5) {
-      arr = num.slice(0, 2).join("") + "K";
-    } else if (num.length === 6) {
-      arr = num.slice(0, 3).join("") + "K";
-    } else if (num.length === 7) {
-      arr = num.slice(0, 1).join("") + "M";
-    } else if (num.length === 8) {
-      arr = num.slice(0, 2).join("") + "M";
-    } else if (num.length === 9) {
-      arr = num.slice(0, 3).join("") + "M";
+    if (num) {
+      if (num.length === 4) {
+        arr = num.slice(0, 1).join("") + "K";
+      } else if (num.length === 5) {
+        arr = num.slice(0, 2).join("") + "K";
+      } else if (num.length === 6) {
+        arr = num.slice(0, 3).join("") + "K";
+      } else if (num.length === 7) {
+        arr = num.slice(0, 1).join("") + "M";
+      } else if (num.length === 8) {
+        arr = num.slice(0, 2).join("") + "M";
+      } else if (num.length === 9) {
+        arr = num.slice(0, 3).join("") + "M";
+      }
+      return `${arr}`;
     }
-    return `${arr}`;
   }
 
   return (
