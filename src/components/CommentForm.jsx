@@ -25,24 +25,27 @@ export default function CommentForm () {
       <div>
          <form onSubmit={handleSubmit}>
             <section>
-               <p>Name</p>
+               <p className="text-white ">Name</p>
                <div>
                   <title>Input Field</title>
                   <input type="text" id="name" onChange= {handleTextChange}placeholder="Name here" required/>
                </div>    
                <br />
-               <p>Comment</p>
+               <p className="text-white">Comment</p>
                <div>
                   <title>Input Field</title>
                   <input type="text" placeholder="Comment here"  id="comment" onChange={handleTextChange}required/>
                </div>
                <br />
-               <button className='Submit' type='submit'>Submit </button>
+               <button className='rg bg-zinc-50 Submit button text-black' type='submit button'>Submit button </button>
+               <br />
                <ul className="text-white">
                   {comments.map(specificComments => (
                      <li>
                         {specificComments.name}
-                        {specificComments.comment}
+                        <br />
+                        
+                          {specificComments.comment}
                       </li>
                   ))}
                </ul>
